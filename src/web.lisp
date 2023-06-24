@@ -5,8 +5,11 @@
         :caveman2-site.config
         :caveman2-site.view
         :caveman2-site.db
+        :caveman2-site.model
         :datafly
-        :sxql)
+        :sxql
+        :split-sequence
+        :md5)
   (:export :*web*))
 (in-package :caveman2-site.web)
 
@@ -33,3 +36,6 @@
   (declare (ignore app))
   (merge-pathnames #P"_errors/404.html"
                    *template-directory*))
+
+(defroute "/compare/*" (&key splat)
+  (format nil "We saw this in the URL: ~a" (car splat)))

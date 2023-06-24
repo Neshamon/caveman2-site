@@ -21,7 +21,8 @@
   :components ((:module "src"
                 :components
                 ((:file "main" :depends-on ("config" "view" "db"))
-                 (:file "web" :depends-on ("view"))
+                 (:file "web" :depends-on ("model" "view"))
+                 (:file "model" :depends-on ("config"))
                  (:file "view" :depends-on ("config"))
                  (:file "db" :depends-on ("config"))
                  (:file "config"))))
